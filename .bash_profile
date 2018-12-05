@@ -46,6 +46,11 @@ ruby_version() {
   fi
 }
 
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+
 # --------------
 # Command prompt
 # --------------
@@ -58,3 +63,14 @@ export PS1="🌺 \w\[\033[32m\]\$(parse_git_branch) \[\033[035m\]\$(node_version
 
 # Set ssh
 eval $(ssh-agent -s) > /dev/null
+
+# -------
+# Aliases
+# -------
+alias l="ls -la"       # List in long format, include dotfiles
+alias ld="ls -ld */"   # List in long format, only directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias be="bundle exec"
