@@ -28,8 +28,23 @@ node_version() {
 }
 
 # Ruby: check version
+ruby_version() {
+  if which ruby &> /dev/null && ruby -v &> /dev/null; then
+    ruby -v | cut -d' ' -f2
+  elif which jruby &> /dev/null && jruby -v &> /dev/null; then
+    echo "jruby $(jruby -v | cut -d' ' -f2)"
+  else
+    echo none
+  fi
+}
 
 # Python: check version
+  if which python &> /dev/null; then
+    python --version 2>&1 2>/dev/null | cut -d' ' -f2
+  else
+    echo none
+  fi
+}
 
 # --------------
 # Command prompt
