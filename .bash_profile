@@ -55,7 +55,7 @@ function mkd() {
 # Command prompt
 # --------------
 
-export PS1="🌺 \w\[\033[32m\]\$(parse_git_branch) \[\033[035m\]\$(node_version)\[\033[00m\]\n ❥ "
+export PS1="🌙 \w\[\033[32m\]\$(parse_git_branch) \[\033[035m\]\$(node_version)\[\033[00m\]\n ❥ "
 
 # --------------------
 # Environment settings
@@ -67,6 +67,7 @@ eval $(ssh-agent -s) > /dev/null
 # -------
 # Aliases
 # -------
+
 alias l="ls -la"       # List in long format, include dotfiles
 alias ld="ls -ld */"   # List in long format, only directories
 alias ..="cd .."
