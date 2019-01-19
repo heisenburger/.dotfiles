@@ -39,6 +39,7 @@ ruby_version() {
 }
 
 # Python: check version
+python_verion() {
   if which python &> /dev/null; then
     python --version 2>&1 2>/dev/null | cut -d' ' -f2
   else
