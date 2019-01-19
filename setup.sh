@@ -2,7 +2,8 @@
 
 CURRENT_DIR=$(pwd)
 
-for f in .bash_profile \
+for f in .bashrc \
+         .bash_profile \
          .gitconfig \
          .gitignore_global \
          .git-completion.bash \
