@@ -3,7 +3,7 @@
   email = serenadantingchen@gmail.com
 [alias]
   st = status
-  cm = commit
+  cm = commit -a -m # add and commit with message
   br = branch
   co = checkout
   df = diff
