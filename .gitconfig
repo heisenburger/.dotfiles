@@ -6,6 +6,7 @@
   cm = commit -a -m # add and commit with message
   br = branch
   co = checkout
+  nb = checkout -b # make new branch and check it out
   df = diff
   hist = log --pretty=format:\"%h %ad (%cr) | %s%C(auto)%d%Creset [%an]\" --graph --date=short
   wdiff = diff --word-diff
