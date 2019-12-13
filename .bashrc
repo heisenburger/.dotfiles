@@ -23,8 +23,15 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# Versions
+
 # Node: check version
-node_version() {
+function node_version() {
   if which node &> /dev/null; then
     node -v | cut -d' ' -f2
   else
@@ -33,7 +40,7 @@ node_version() {
 }
 
 # Ruby: check version
-ruby_version() {
+function ruby_version() {
   if which ruby &> /dev/null && ruby -v &> /dev/null; then
     ruby -v | cut -d' ' -f2
   elif which jruby &> /dev/null && jruby -v &> /dev/null; then
@@ -44,17 +51,16 @@ ruby_version() {
 }
 
 # Python: check version
-python_verion() {
+function python_version() {
   if which python &> /dev/null; then
-    python --version 2>&1 2>/dev/null | cut -d' ' -f2
+    python --version 2>&1 | cut -d' ' -f2
   else
     echo none
   fi
 }
 
-# Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$_";
+function __version() {
+  echo "Python v$(python_version) || Ruby v$(ruby_version) || Node $(node_version)"
 }
 
 # --------------
@@ -87,3 +93,8 @@ alias serve="bundle exec jekyll serve"
 
 # Git aliases found in .gitconfig_global
 
+# --------
+# Say shit
+# --------
+
+__version
