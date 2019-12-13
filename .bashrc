@@ -23,11 +23,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-# Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$_";
-}
-
 # Versions
 
 # Node: check version
@@ -67,7 +62,7 @@ function __version() {
 # Command prompt
 # --------------
 
-export PS1="🌼 \w\[\033[32m\]\$(parse_git_branch) \[\033[00m\]\n ❥ "
+export PS1="💙 \w\[\033[32m\]\$(parse_git_branch) \[\033[00m\]\n ❥ "
 
 # --------------------
 # Environment settings
