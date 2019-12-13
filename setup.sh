@@ -7,6 +7,7 @@ for f in .bashrc \
          .gitconfig \
          .gitignore_global \
          .git-completion.bash \
+         .hushlogin \
          .vimrc
 do
   printf '\n'
