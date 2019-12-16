@@ -2,7 +2,7 @@
 # Bash configuration
 # ==================
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$HOME/Work/utilities/woff2:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -62,7 +62,7 @@ function __version() {
 # Command prompt
 # --------------
 
-export PS1="💙 \w\[\033[32m\]\$(parse_git_branch) \[\033[00m\]\n ❥ "
+export PS1="🦋 \w\[\033[32m\]\$(parse_git_branch) \[\033[00m\]\n ❥ "
 
 # --------------------
 # Environment settings
