@@ -1,6 +1,3 @@
-[user]
-  name = heisenburger
-  email = serenadantingchen@gmail.com
 [alias]
   st = status
   cm = commit -a -m # add and commit with message
