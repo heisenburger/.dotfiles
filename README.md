@@ -1,5 +1,5 @@
 # .dotfiles
-My personal dotfiles setup.
+My personal dotfiles setup. Heavily bassed off [glsignal's setup](https://github.com/glsignal/dotfiles).
 
 ---
 
