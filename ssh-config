@@ -1,0 +1,7 @@
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+
+host remarkable
+  Hostname 10.11.99.1
+  User root
