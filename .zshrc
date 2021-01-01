@@ -90,7 +90,7 @@ PR_NO_COLOR="%{$terminfo[sgr0]%}"
 
 # Check if we are on SSH or not
 # set the prompt
-PS1=$'\n''serena :: ${PR_BLUE}%~${PR_NO_COLOR} ${vcs_info_msg_0_} '$'\n''$(pr_user_op) '
+PS1=$'\n''${PR_BLUE}%~${PR_NO_COLOR} ${vcs_info_msg_0_} '$'\n''$(pr_user_op) '
 PS2=$'%_❥'
 RPROMPT=$'%!'
 
