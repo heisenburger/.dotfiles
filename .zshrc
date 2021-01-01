@@ -21,9 +21,9 @@ precmd() {
 }
 
 # Git: branch tab completion
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
 
 # Versions
 
@@ -67,6 +67,13 @@ function __version() {
 # load modules for git branch display
 setopt prompt_subst
 
+# make some aliases for the colours: (coud use normal escap.seq's too)
+autoload -U colors && colors
+for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
+  eval PR_$color='%{$fg[${(L)color}]%}'
+done
+PR_NO_COLOR="%{$terminfo[sgr0]%}"
+
 # Set up cute emoticon prompt
 pr_user() {
   echo "%(!.${PR_RED}.${PR_WHITE})%(!.[! %n !].%n)${PR_NO_COLOR}"
@@ -81,16 +88,9 @@ function pr_user_op() {
   echo "${PR_ART}${PR_PRIV}${PR_NO_COLOR}"
 }
 
-# make some aliases for the colours: (coud use normal escap.seq's too)
-for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-  eval PR_$color='%{$fg[${(L)color}]%}'
-done
-PR_NO_COLOR="%{$terminfo[sgr0]%}"
-
-
 # Check if we are on SSH or not
 # set the prompt
-PS1=$'\n''${PR_BLUE}%~${PR_NO_COLOR} ${vcs_info_msg_0_} '$'\n''$(pr_user_op) '
+PS1=$'\n''${PR_BLUE}%~ ${PR_GREEN}${vcs_info_msg_0_} '$'\n''$(pr_user_op)${PR_NO_COLOR} '
 PS2=$'%_❥'
 RPROMPT=$'%!'
 
@@ -125,4 +125,3 @@ alias serve="bundle exec jekyll serve"
 # --------
 
 __version
-
