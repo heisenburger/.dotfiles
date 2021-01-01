@@ -21,8 +21,8 @@ precmd() {
 }
 
 # Git: branch tab completion
-if [ -f ~/.git-completion.zsh ]; then
-  . ~/.git-completion.zsh
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
 fi
 
 # Versions
