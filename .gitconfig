@@ -20,3 +20,6 @@
 [remote "origin"]
   push = HEAD
 
+[user]
+	name = Serena Chen
+	email = serenadantingchen@gmail.com
