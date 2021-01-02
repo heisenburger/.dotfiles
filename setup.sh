@@ -9,7 +9,6 @@ for f in .bashrc \
          .git-completion.bash \
          .hushlogin \
          .vimr \
-         .zprofile \
          .zshrc
 do
   printf '\n'

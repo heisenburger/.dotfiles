@@ -25,7 +25,8 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 
-# Versions
+# Autocomplete zsh for kitty
+kitty + complete setup zsh | source /dev/stdin
 
 # Node: check version
 function node_version() {
@@ -59,6 +60,7 @@ function python_version() {
 function __version() {
   echo "Python v$(python_version) :: Ruby v$(ruby_version) :: Node $(node_version)"
 }
+
 
 # --------------
 # Command prompt
@@ -120,8 +122,7 @@ alias serve="bundle exec jekyll serve"
 
 # Git aliases found in .gitconfig_global
 
-# --------
-# Say shit
-# --------
-
+# ---------
+# Say stuff
+# ---------
 __version
