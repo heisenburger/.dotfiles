@@ -2,7 +2,7 @@
 # Bash configuration
 # ==================
 
-export PATH=/usr/local/bin:$HOME/Work/utilities/woff2:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # ---------
 # Functions
@@ -22,15 +22,6 @@ autoload -Uz compinit && compinit
 
 # Autocomplete zsh for kitty
 kitty + complete setup zsh | source /dev/stdin
-
-# Node: check version
-function node_version() {
-  if which node &> /dev/null; then
-    node -v | cut -d' ' -f2
-  else
-    echo none
-  fi
-}
 
 # Ruby: check version
 function ruby_version() {
@@ -53,7 +44,7 @@ function python_version() {
 }
 
 function __version() {
-  echo "Python v$(python_version) :: Ruby v$(ruby_version) :: Node $(node_version)"
+  echo "Python v$(python_version) :: Ruby v$(ruby_version)"
 }
 
 
@@ -125,17 +116,13 @@ alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 # ---------
 __version
 
+
+# -------
+# Lastly,
+# -------
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+source $HOME/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Add depot_tools to PATH
-export PATH=/Users/sereeena/depot_tools:$PATH
 
-
-# pnpm
-export PNPM_HOME="/Users/sereeena/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
