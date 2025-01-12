@@ -4,11 +4,6 @@
 
 export PATH=/usr/local/bin:$HOME/Work/utilities/woff2:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-eval "$(rbenv init -)"
-
 # ---------
 # Functions
 # ---------
@@ -96,7 +91,6 @@ PS1=$'\n''${PR_BLUE}%~ ${PR_GREEN}${vcs_info_msg_0_} '$'\n''$(pr_user_op)${PR_NO
 PS2=$'%_❥'
 RPROMPT=$'%!'
 
-#export PS1=$'🦋 %~ ${vcs_info_msg_0_} \n ❥ '
 
 # --------------------
 # Environment settings
@@ -120,9 +114,28 @@ alias ....="cd ../../.."
 alias be="bundle exec"
 alias serve="bundle exec jekyll serve"
 
+# Sublime Test
+
+alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
 # Git aliases found in .gitconfig_global
 
 # ---------
 # Say stuff
 # ---------
 __version
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Add depot_tools to PATH
+export PATH=/Users/sereeena/depot_tools:$PATH
+
+
+# pnpm
+export PNPM_HOME="/Users/sereeena/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

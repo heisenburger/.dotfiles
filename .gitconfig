@@ -17,9 +17,12 @@
   default = upstream
 [core]
   excludesfile = ~/.gitignore_global
+	precomposeUnicode = true
 [remote "origin"]
   push = HEAD
 
 [user]
-	name = Serena Chen
+	name = heisenburger
 	email = serenadantingchen@gmail.com
+[pull]
+	ff = only
