@@ -1,0 +1,16 @@
+{
+  "theme": "Spacegray.sublime-theme",
+  "color_scheme": "Mariana.sublime-color-scheme",
+  "ignored_packages":
+  [
+    "Vintage",
+  ],
+
+  "font_face": "SF Mono",
+  "font_size": 14,
+  "line_padding_bottom": 3,
+  "line_padding_top": 3,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "index_files": true,
+}
