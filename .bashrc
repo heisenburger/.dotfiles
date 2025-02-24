@@ -7,8 +7,6 @@ export PATH=/usr/local/bin:$HOME/Work/utilities/woff2:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-eval "$(rbenv init -)"
-
 # ---------
 # Functions
 # ---------
