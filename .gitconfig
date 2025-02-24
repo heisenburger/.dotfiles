@@ -23,3 +23,5 @@
 [user]
 	name = Serena Chen
 	email = serenadantingchen@gmail.com
+[init]
+	defaultBranch = main
