@@ -2,12 +2,11 @@
 # Bash configuration
 # ==================
 
-export PATH=/usr/local/bin:$HOME/Work/utilities/woff2:$PATH
+export PATH=/usr/local/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-eval "$(rbenv init -)"
 
 # ---------
 # Functions
@@ -62,7 +61,7 @@ function __version() {
 # Command prompt
 # --------------
 
-export PS1="🦋 \w\[\033[32m\]\$(parse_git_branch) \[\033[00m\]\n ❥ "
+export PS1="🌺 \w\[\033[32m\]\$(parse_git_branch) \[\033[00m\]\n ❥ "
 
 # --------------------
 # Environment settings
@@ -93,6 +92,3 @@ alias serve="bundle exec jekyll serve"
 # --------
 
 __version
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"

@@ -8,20 +8,22 @@
   hist = log --pretty=format:\"%h %ad (%cr) | %s%C(auto)%d%Creset [%an]\" --graph --date=short
   wdiff = diff --word-diff
   wshow = show --word-diff
-[branch "master"]
+[branch "main"]
   remote = origin
-  merge = refs/heads/master
+  merge = refs/heads/main
 [ignore]
   filemode = false
 [push]
   default = upstream
 [core]
   excludesfile = ~/.gitignore_global
+	precomposeUnicode = true
 [remote "origin"]
   push = HEAD
-
 [user]
-	name = Serena Chen
+	name = heisenburger
 	email = serenadantingchen@gmail.com
 [init]
 	defaultBranch = main
+[pull]
+	ff = only

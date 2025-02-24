@@ -2,12 +2,7 @@
 # Bash configuration
 # ==================
 
-export PATH=/usr/local/bin:$HOME/Work/utilities/woff2:$PATH
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-eval "$(rbenv init -)"
+export PATH=/usr/local/bin:$PATH
 
 # ---------
 # Functions
@@ -27,15 +22,6 @@ autoload -Uz compinit && compinit
 
 # Autocomplete zsh for kitty
 kitty + complete setup zsh | source /dev/stdin
-
-# Node: check version
-function node_version() {
-  if which node &> /dev/null; then
-    node -v | cut -d' ' -f2
-  else
-    echo none
-  fi
-}
 
 # Ruby: check version
 function ruby_version() {
@@ -58,7 +44,7 @@ function python_version() {
 }
 
 function __version() {
-  echo "Python v$(python_version) :: Ruby v$(ruby_version) :: Node $(node_version)"
+  echo "Python v$(python_version) :: Ruby v$(ruby_version)"
 }
 
 
@@ -96,7 +82,6 @@ PS1=$'\n''${PR_BLUE}%~ ${PR_GREEN}${vcs_info_msg_0_} '$'\n''$(pr_user_op)${PR_NO
 PS2=$'%_❥'
 RPROMPT=$'%!'
 
-#export PS1=$'🦋 %~ ${vcs_info_msg_0_} \n ❥ '
 
 # --------------------
 # Environment settings
@@ -120,9 +105,24 @@ alias ....="cd ../../.."
 alias be="bundle exec"
 alias serve="bundle exec jekyll serve"
 
+# Sublime Test
+
+alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
 # Git aliases found in .gitconfig_global
 
 # ---------
 # Say stuff
 # ---------
 __version
+
+
+# -------
+# Lastly,
+# -------
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+source $HOME/.rvm/scripts/rvm
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
